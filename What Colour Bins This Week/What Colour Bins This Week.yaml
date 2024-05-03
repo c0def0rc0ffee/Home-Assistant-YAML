@@ -1,0 +1,19 @@
+if:
+  - condition: template
+    value_template: "{{(as_timestamp(now())|timestamp_custom ('%U') | int % 2) == 1 }}"
+then:
+  - alias: Black and blue bags
+    service: notify.alexa_media_LoungeEchoDot
+    data:
+      message: Its black and blue bags this week
+      target: media_player.Stinky
+      data:
+        type: tts
+else:
+  - alias: White Bags and glass
+    service: notify.alexa_media_LoungeEchoDot
+    data:
+      message: Its white bags and glass this week
+      target: media_player.LoungeEchoDot
+      data:
+        type: tts
