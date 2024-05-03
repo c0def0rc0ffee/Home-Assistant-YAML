@@ -6,7 +6,7 @@ then:
     service: notify.alexa_media_LoungeEchoDot
     data:
       message: Its black and blue bags this week
-      target: media_player.Stinky
+      target: media_player.LoungeEchoDot
       data:
         type: tts
 else:
